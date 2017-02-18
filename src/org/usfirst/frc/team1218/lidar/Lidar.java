@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.I2C;
 public class Lidar extends I2C {
 	
 	protected static final int defaultAddress = 0x62;
-	
 
 	public Lidar(Port port, int deviceAddress) {
 		super(port, deviceAddress);
@@ -16,7 +15,6 @@ public class Lidar extends I2C {
 	}
 	
 	public int readDistance(){
-		write(0x00,0x04);
 		return bytesToInt(readByte(0x0F),readByte(0x10));
 	}
 	
